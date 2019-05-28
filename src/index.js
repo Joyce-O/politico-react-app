@@ -1,9 +1,10 @@
+// eslint-disable-next-line react/jsx-closing-tag-location
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import 'semantic-ui-css/semantic.min.css';
+import App from './containers/App';
+import Store from './store';
+import './assets/index.css';
 
-class Welcome extends React.Component {
-  render() {
-    return <h1>Hello World from React boilerplate</h1>;
-  }
-}
-ReactDOM.render(<Welcome />, document.getElementById('root'));
+render(<Provider store={Store}><App /></Provider>, document.getElementById('root'));

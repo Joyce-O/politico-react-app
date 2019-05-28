@@ -1,0 +1,6 @@
+export const AUTH_LOADING = 'AUTH_LOADING';
+export const AUTH_SUCCESS = 'AUTH_SUCCESS';
+export const AUTH_FAIL = 'AUTH_FAIL';
+export const PASSWORD_SUCCESS = 'PASSWORD_SUCCESS';
+export const PASSWORD_FAIL = 'PASSWORD_FAIL';
+export const PASSWORD_LOADING = 'PASSWORD_LOADING';
