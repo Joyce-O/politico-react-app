@@ -20,7 +20,7 @@ const Profile = ({ authError, submit, loading, signedUp }) => (
       </center>
       {' '}
       <div id="action-word">
-        <h2>
+        <h2 id="profile-text">
           Profile
         </h2>
         <div>

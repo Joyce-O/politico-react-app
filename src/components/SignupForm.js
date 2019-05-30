@@ -40,20 +40,18 @@ const SignupForm = ({
             className="yellow-box"
             style={{
               position: 'absolute',
-              height: '400px',
-              width: '600px',
+              background: 'rgba(1, 51, 1, 0.671)',
+              height: 'auto',
+              width: '700px',
               margin: '-100px 0 0 -150px',
-              top: '30%',
+              top: '40%',
               left: '40%',
               padding: '35px',
               boxShadow: '2px 2px 12px 2px rgba(.2, .2, .2, .2)'
             }}
           >
             <div>
-              <h2 style={{ textAlign: 'center', padding: '1rem', color: 'black' }}> Forgot Password?</h2>
-              <p style={{ textAlign: 'center', padding: '1rem', color: 'black' }}>
-    Enter your email to get a link to reset your pasword
-              </p>
+              <h4 className="fill-up">Please fill in this form to create an account.</h4>
               <errorMsg
                 hidden={!authError && formError.length === 0}
                 error={authError || formError}

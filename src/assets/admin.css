@@ -2,6 +2,68 @@
     font-family: rubikMedium;
     src: url(./Rubik-Medium.ttf);
   }
+
+  .btn, .btn:link, .btn:visited {
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, .2) !important;
+    font-size: 1.5rem !important;
+    width: 100%;
+    color: red !important;
+    text-align: center;
+    padding: 2rem 0rem;
+    letter-spacing: 0.2rem;
+    border: none !important;
+    margin-bottom: 2rem !important;
+    cursor: pointer;
+    transition: all 0.4s !important;
+    position: relative !important;
+}
+.blueButton {
+    background-color: #4b4949 !important;
+    color: white !important;
+}
+.blueButton:hover {
+    background-color: rgb(97, 128, 43) !important;
+}
+.whiteButton {
+    background-color: white !important;
+    box-shadow: 0 0.1rem 0.1rem gray !important;
+}
+.whiteButton i {
+    margin-right: 1rem;
+}
+.whiteButton:hover {
+    background-color: #7cc6ff !important;
+    color: white !important;
+    font-weight: bold !important;
+}
+.whiteButton:hover i {
+    color: white !important;
+}
+@media (max-width: 600px) {
+    .whiteButton {
+        font-size: 1.4rem !important;
+   }
+}
+
+
+.formInput {
+    font-family: inherit;
+    font-weight: 100 !important;
+}
+.field input {
+    color: gray !important;
+    font-size: 1rem;
+    font-weight: 200 !important;
+    border: 1px solid rgba(49, 87, 190, 0.322) !important;
+    box-shadow: 0px 0.1rem 0.5rem 0.1rem rgba(63, 81, 129, 0.041) !important;
+}
+
+#profile-text {
+  color: rgb(32, 30, 28);
+
+}
+
+/* New additions end */
   
   .home-section-admin:before {
       content: "";
@@ -227,7 +289,7 @@
       margin-right: 15px;
     }
     #aside-profile {
-      margin-left: 35px;
+      margin-left: 5px;
     }
     #menu ul > ul {
       padding-left: 39px;
@@ -548,7 +610,7 @@
   #user-descs {
   /* border: 2px solid gray; */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   box-shadow: rgba(0, 0, 0, 0.16) 0 6px 25px;
   padding: 10px;
   border-radius: 5px; 
