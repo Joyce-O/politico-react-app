@@ -7,7 +7,7 @@ import Button from '../utilities/Button';
 import errorMsg from '../utilities/errorMsg';
 import { SignupSchema } from '../utilities/validations';
 
-const SignupForm = ({
+const LoginForm = ({
   authError, submit, loading, signedUp,
 }) => (
   <div>
@@ -40,18 +40,20 @@ const SignupForm = ({
             className="yellow-box"
             style={{
               position: 'absolute',
-              background: 'rgba(1, 51, 1, 0.671)',
-              height: 'auto',
-              width: '700px',
+              height: '400px',
+              width: '600px',
               margin: '-100px 0 0 -150px',
-              top: '40%',
+              top: '30%',
               left: '40%',
               padding: '35px',
               boxShadow: '2px 2px 12px 2px rgba(.2, .2, .2, .2)'
             }}
           >
             <div>
-              <h4 className="fill-up">Please fill in this form to create an account.</h4>
+              <h2 style={{ textAlign: 'center', padding: '1rem', color: 'black' }}> Forgot Password?</h2>
+              <p style={{ textAlign: 'center', padding: '1rem', color: 'black' }}>
+    Enter your email to get a link to reset your pasword
+              </p>
               <errorMsg
                 hidden={!authError && formError.length === 0}
                 error={authError || formError}
@@ -148,7 +150,7 @@ const SignupForm = ({
   </div>
 );
 
-SignupForm.propTypes = {
+LoginForm.propTypes = {
   submit: PropTypes.func,
   signedUp: PropTypes.bool,
   loading: PropTypes.bool,
@@ -157,11 +159,11 @@ SignupForm.propTypes = {
 
 const defaultFunc = input => input;
 
-SignupForm.defaultProps = {
+LoginForm.defaultProps = {
   signedUp: false,
   loading: false,
   submit: defaultFunc
 };
 
 
-export default SignupForm;
+export default LoginForm;

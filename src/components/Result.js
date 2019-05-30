@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Header from './Header';
-// import SignupForm from './SignupForm';
 import ResultContainer from '../containers/ResultContainer';
 import Footer from './Footer';
 

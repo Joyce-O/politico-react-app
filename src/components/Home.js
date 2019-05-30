@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Header from './Header';
-// import SignupForm from './SignupForm';
 import Signup from '../containers/Signup';
 import Footer from './Footer';
 
@@ -23,7 +22,7 @@ const Home = ({ authError, submit, loading, signedUp }) => (
       <div id="action-word">
         <h2>
           Welcome to
-          <span>Politico, </span>
+          <span> Politico, </span>
           vote at the click of a button!
         </h2>
         <div>

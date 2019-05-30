@@ -5,8 +5,7 @@ const Header = () => (
     <div>
       <ul>
         <li id="head-text">
-          <a href="/" dangerouslySetInnerHTML={{ __html: '&Popf;&oopf;&lopf;&iopf;&topf;&iopf;&copf;O' }} />
-
+          <a href="/login" dangerouslySetInnerHTML={{ __html: '&Popf;&oopf;&lopf;&iopf;&topf;&iopf;&copf;O' }} />
         </li>
       </ul>
     </div>

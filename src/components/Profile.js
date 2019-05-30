@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Header from './Header';
-// import SignupForm from './SignupForm';
 import ProfileContainer from '../containers/ProfileContainer';
 import Footer from './Footer';
 
@@ -21,7 +20,7 @@ const Profile = ({ authError, submit, loading, signedUp }) => (
       </center>
       {' '}
       <div id="action-word">
-        <h2>
+        <h2 id="profile-text">
           Profile
         </h2>
         <div>

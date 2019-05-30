@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import Header from './Header';
 // import SignupForm from './SignupForm';
 import CandidateContainer from '../containers/CandidateContainer';
