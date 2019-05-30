@@ -20,6 +20,7 @@ const App = () => (
       <Route path="/result" exact component={Result} />
       <Route path="/office" exact component={Office} />
       <Route path="/forgotPassword" exact component={Forgotpassword} />
+      {/* <Route component={Home} /> */}
     </Switch>
   </Router>
 );
