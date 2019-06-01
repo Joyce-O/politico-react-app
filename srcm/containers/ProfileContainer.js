@@ -34,7 +34,7 @@ Political Office
             </li>
             <li>
               <img src="https://res.cloudinary.com/politic/image/upload/v1558961423/mail-icon.svg" alt="home icon" />
-              <a href="/office">
+              <a href="/candidate">
                 <span>Apply for Office</span>
               </a>
             </li>

@@ -18,11 +18,11 @@
     position: relative !important;
 }
 .blueButton {
-  background-color: rgb(97, 128, 43) !important;
-  color: white !important;
+    background-color: rgb(97, 128, 43) !important;
+    color: white !important;
 }
 .blueButton:hover {
-  background-color: #4b4949 !important;
+    background-color: #4b4949 !important;
 }
 .whiteButton {
     background-color: white !important;

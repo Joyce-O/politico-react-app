@@ -7,7 +7,7 @@ import Button from '../utilities/Button';
 import errorMsg from '../utilities/errorMsg';
 import { SignupSchema } from '../utilities/validations';
 
-const Party = ({
+const LoginForm = ({
   authError, submit, loading, signedUp,
 }) => (
   <div>
@@ -50,7 +50,10 @@ const Party = ({
             }}
           >
             <div>
-              <h2 style={{ textAlign: 'center', padding: '1rem', color: 'black' }}> Apply as a Candidate</h2>
+              <h2 style={{ textAlign: 'center', padding: '1rem', color: 'black' }}> Forgot Password?</h2>
+              <p style={{ textAlign: 'center', padding: '1rem', color: 'black' }}>
+    Enter your email to get a link to reset your pasword
+              </p>
               <errorMsg
                 hidden={!authError && formError.length === 0}
                 error={authError || formError}
@@ -147,7 +150,7 @@ const Party = ({
   </div>
 );
 
-Party.propTypes = {
+LoginForm.propTypes = {
   submit: PropTypes.func,
   signedUp: PropTypes.bool,
   loading: PropTypes.bool,
@@ -156,11 +159,11 @@ Party.propTypes = {
 
 const defaultFunc = input => input;
 
-Party.defaultProps = {
+LoginForm.defaultProps = {
   signedUp: false,
   loading: false,
   submit: defaultFunc
 };
 
 
-export default Party;
+export default LoginForm;

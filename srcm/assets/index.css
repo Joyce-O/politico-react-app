@@ -9,7 +9,7 @@
 body {
   height: 100vh;
   overflow: hidden;
-  background-image: linear-gradient(green, white, white, white, rgb(74, 161, 140));
+  background-image: linear-gradient(green, white, white, white, green);
 }
 
 /* Main container */
@@ -23,23 +23,6 @@ body {
   /* background-image: linear-gradient(green, white, white, white, green); */
   width: 100vw;
   opacity: .8;
-  overflow: auto;
-}
-
-/* Main container */
-.containerl {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  background-image: url(https://res.cloudinary.com/politic/image/upload/v1559388214/Screenshot_2019-06-01_at_12.19.50_PM.png);
-  background-size: cover;
-  padding: 20px;
-  /* background-color: green;  */
-  /* For browsers that do not support gradients replace with an image */
-  /* background-image: linear-gradient(green, white, white, white, green); */
-  width: 100vw;
-  /* opacity: .8; */
-  opacity: 0.6;
   overflow: auto;
 }
 /* Header section */
@@ -61,20 +44,16 @@ header #head-text a {
   font-weight: bolder;
 
 }
-/* header .homer {
-  background: 'https://res.cloudinary.com/politic/image/upload/v1559388214/Screenshot_2019-06-01_at_12.19.50_PM.png';
-} */
-.centre {
-  text-align: center;
-  color: #000;
-}
 
 .head-login-ul {
   margin-left: auto;
   margin-right: 40px;
   display: flex;
-  height: 40px;
+  flex: 1 1 100;
+  height: auto;
+  box-shadow: 0px 2px 3px 2px yellow;
   align-content: space-between;
+  border: 3px solid black;
 }
 .head-span {
   color: white;
@@ -122,20 +101,10 @@ margin-top: 0px;
 flex-wrap: wrap;
 }
 #action-word {
-/* margin-top: -2px; */
+margin-top: -200px;
 margin-bottom: 20px;
 color: rgba(1, 51, 1, 0.808);
 
-}
-#action-wordb {
-display: flex; 
-flex-direction: column;
-align-content: space-between;
-margin-top: 100px;
-margin-bottom: 20px;
-color: rgba(1, 51, 1, 0.808);
-align-self: center;
-text-align: center;
 }
 #action-word span {
 font-style: oblique;
@@ -143,19 +112,16 @@ text-shadow: 2px 2px 8px rgb(158, 214, 67);
 }
 
 #signup-btn {
-  margin-right: 20px;
-  background: rgb(97, 128, 43); 
+  background: white; 
   padding: 15px;
   font-weight: bold;
   font-size: 1.5em;
-  color: white;
-  /* color: rgb(75, 73, 73); */
-  /* box-shadow: 0px 2px 3px 2px whitesmoke; */
+  color: rgb(75, 73, 73);
+  box-shadow: 0px 2px 3px 2px whitesmoke;
   border-radius: 3px;
 }
 
-#login-btn {
-  margin-right: 10px;
+#log-btn {
   background: white; 
   padding: 15px;
   font-weight: bold;
@@ -539,7 +505,7 @@ footer {
   #head-text a {
     font-size: 3rem;
   }
-  #signup-btn {
+  #signup-btn, #log-btn{
    padding: 5px;
    font-size: 1em;
  }
@@ -609,7 +575,7 @@ footer {
     display: flex;
     justify-content: space-between;
   }
-   #signup-btn {
+   #signup-btn, #log-btn{
     padding: 5px;
     font-size: 1em;
   }

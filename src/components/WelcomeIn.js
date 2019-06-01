@@ -36,12 +36,11 @@ const LoginForm = ({
             className="yellow-box"
             style={{
               position: 'absolute',
-              background: 'black',
+              background: 'rgba(1, 51, 1, 0.671)',
               height: 'auto',
-              width: '40%',
+              width: '700px',
               margin: '-100px 0 0 -150px',
-              top: '50%',
-              borderRadius: '5px',
+              top: '40%',
               left: '40%',
               padding: '35px',
               boxShadow: '2px 2px 12px 2px rgba(.2, .2, .2, .2)'

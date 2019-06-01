@@ -1,5 +1,5 @@
 import React from 'react';
-import Login from '../containers/Login';
+import Signup from '../containers/Signup';
 import Footer from './Footer';
 
 const SignupComp = () => (
@@ -15,7 +15,7 @@ const SignupComp = () => (
       <div>
         <ul className="head-login-ul">
           <li>
-            <a id="signup-btn" href="/signup">Signup</a>
+            <a id="signup-btn" href="/">Login</a>
           </li>
         </ul>
       </div>
@@ -29,7 +29,7 @@ const SignupComp = () => (
             <span> Politico, </span>
           vote at the click of a button!
           </h2>
-          <Login />
+          <Signup />
         </div>
       </div>
     </section>

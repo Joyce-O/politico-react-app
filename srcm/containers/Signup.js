@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 
-import Party from '../components/Party';
+import SignupForm from '../components/SignupForm';
 import { fetchSignup } from '../actions/auth';
 
-const PartyContainer = (props) => {
+const Signup = (props) => {
   const {
     loading,
     error,
@@ -34,7 +34,7 @@ const PartyContainer = (props) => {
   return !token ? (
     <div>
       <div>
-        <Party
+        <SignupForm
           authError={error}
           signedUp={isAuthenticated}
           loading={loading}
@@ -68,7 +68,7 @@ const mapDispatchToProps = dispatch => ({
     password,)),
 });
 
-PartyContainer.propTypes = {
+Signup.propTypes = {
   loading: PropTypes.bool.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
   error: PropTypes.oneOf(['null', null, PropTypes.object]).isRequired,
@@ -78,8 +78,8 @@ PartyContainer.propTypes = {
 
 const defaultFunc = input => input;
 
-PartyContainer.defaultProps = {
+Signup.defaultProps = {
   onSignup: defaultFunc,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PartyContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(Signup);
