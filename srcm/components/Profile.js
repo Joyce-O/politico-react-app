@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Header from './Header';
-// import SignupForm from './SignupForm';
-import CandidateContainer from '../containers/CandidateContainer';
+
+import Registered from './Registered';
+import ProfileContainer from '../containers/ProfileContainer';
 import Footer from './Footer';
 
-const Candidates = ({ authError, submit, loading, signedUp }) => (
+const Profile = ({ authError, submit, loading, signedUp }) => (
   <div className="container">
-    <Header />
+    <Registered />
     <section className="home-section home-section-home">
       <center>
         <div className="countdown-div countdown-di-login">
@@ -20,11 +20,11 @@ const Candidates = ({ authError, submit, loading, signedUp }) => (
       </center>
       {' '}
       <div id="action-word">
-        <h2>
-          Candidates
+        <h2 id="profile-text">
+          Profile
         </h2>
         <div>
-          <CandidateContainer />
+          <ProfileContainer />
         </div>
       </div>
     </section>
@@ -32,7 +32,7 @@ const Candidates = ({ authError, submit, loading, signedUp }) => (
   </div>
 );
 
-Candidates.propTypes = {
+Profile.propTypes = {
   submit: PropTypes.func,
   signedUp: PropTypes.bool,
   loading: PropTypes.bool,
@@ -41,10 +41,10 @@ Candidates.propTypes = {
 
 const defaultFunc = input => input;
 
-Candidates.defaultProps = {
+Profile.defaultProps = {
   signedUp: false,
   loading: false,
   submit: defaultFunc,
 };
 
-export default Candidates;
+export default Profile;

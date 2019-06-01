@@ -1,5 +1,5 @@
 import * as actions from './actionTypes';
-import { signup, login } from './api';
+import { signup, forgotPassword } from './api';
 
 export const signupStart = () => ({
   type: actions.AUTH_LOADING,
@@ -20,6 +20,11 @@ export const fetchSignup = (firstname,
   email, phone,
   address, password) => (dispatch) => {
   dispatch(signupStart());
+  const authData = {
+    firstname,
+    lastname,
+    email,
+  };
 
   signup({
     firstname, lastname, email, phone, address, password,
@@ -35,32 +40,29 @@ export const fetchSignup = (firstname,
     });
 };
 
-
-export const loginStart = () => ({
-  type: actions.LOGIN_LOADING,
+export const passwordStart = () => ({
+  type: actions.PASSWORD_LOADING,
 });
 
-export const loginSuccess = token => ({
-  type: actions.LOGIN_SUCCESS,
-  token,
+export const sendResetLinkSuccess = passwordResetToken => ({
+  type: actions.PASSWORD_SUCCESS,
+  passwordResetToken,
 });
 
-export const loginFail = error => ({
-  type: actions.LOGIN_FAIL,
+export const sendResetLinkFail = error => ({
+  type: actions.PASSWORD_FAIL,
   error,
 });
 
-export const fetchLogin = (email, password,) => (dispatch) => {
-  dispatch(loginStart());
-
-  login({ email, password, })
+export const sendLink = email => (dispatch) => {
+  dispatch(passwordStart());
+  const url = 'https://ivy-ah-frontend.herokuapp.com/resetPassword';
+  forgotPassword({ email, url })
     .then((response) => {
-      dispatch(loginSuccess(response.data.data[0].token));
-      localStorage.setItem('token', response.data.data[0].token);
+      dispatch(sendResetLinkSuccess(response.data.passwordResetToken));
     })
     .catch((err) => {
-      console.log(err.response);
-      const { error } = err.response.data.data;
-      dispatch(loginFail(error));
+      const { error } = err.response.data;
+      dispatch(sendResetLinkFail(error));
     });
 };

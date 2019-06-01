@@ -5,18 +5,21 @@ import { Formik } from 'formik';
 import { Form, Input } from 'semantic-ui-react';
 import Button from '../utilities/Button';
 import errorMsg from '../utilities/errorMsg';
-import { LoginSchema } from '../utilities/validations';
+import { newPartySchema } from '../utilities/validations';
 
-const LoginForm = ({
-  authError, submit, loading, loggedIn,
+const ApplyParty = ({
+  authError, submit, loading, signedUp,
 }) => (
   <div>
     <Formik
       initialValues={{
+        name: '',
+        acronym: '',
+        hqAddress: '',
         email: '',
-        password: '',
+        phone: '',
       }}
-      validationSchema={LoginSchema}
+      validationSchema={newPartySchema}
       onSubmit={submit}
     >
       {({
@@ -36,24 +39,57 @@ const LoginForm = ({
             className="yellow-box"
             style={{
               position: 'absolute',
-              background: 'black',
               height: 'auto',
-              width: '40%',
+              width: '600px',
               margin: '-100px 0 0 -150px',
-              top: '50%',
-              borderRadius: '5px',
+              top: '30%',
               left: '40%',
               padding: '35px',
               boxShadow: '2px 2px 12px 2px rgba(.2, .2, .2, .2)'
             }}
           >
             <div>
-              <h4 className="fill-up">Please fill in this form to create an account.</h4>
+              <h2 style={{ textAlign: 'center', padding: '1rem', color: 'black' }}> Register a party</h2>
               <errorMsg
                 hidden={!authError && formError.length === 0}
                 error={authError || formError}
               />
               <Form onSubmit={handleSubmit} size="huge">
+                <Form.Field className="formInput">
+                  <Input
+                    required
+                    onBlur={handleBlur}
+                    value={values.name}
+                    name="name"
+                    onChange={handleChange}
+                    type="text"
+                    placeholder="Name"
+                  />
+                </Form.Field>
+                <Form.Field className="formInput">
+                  <Input
+                    required
+                    onBlur={handleBlur}
+                    value={values.acronym}
+                    name="acronym"
+                    onChange={handleChange}
+                    type="text"
+                    control="input"
+                    placeholder="Acronym"
+                  />
+                </Form.Field>
+                <Form.Field className="formInput">
+                  <Input
+                    required
+                    onBlur={handleBlur}
+                    value={values.hqAddress}
+                    name="hqAddress"
+                    onChange={handleChange}
+                    type="text"
+                    control="input"
+                    placeholder="Party address"
+                  />
+                </Form.Field>
                 <Form.Field className="formInput">
                   <Input
                     required
@@ -70,17 +106,17 @@ const LoginForm = ({
                   <Input
                     required
                     onBlur={handleBlur}
-                    value={values.password}
-                    name="password"
+                    value={values.phone}
+                    name="phone"
                     onChange={handleChange}
-                    type="password"
+                    type="phone"
                     control="input"
-                    placeholder="Password"
+                    placeholder="Phone number"
                   />
                 </Form.Field>
                 <Form.Field>
                   <Button loading={loading} disabled={loading} type="blueButton">
-                    {loggedIn ? 'Login successful' : 'Login'}
+                    {signedUp ? 'Party created' : 'Submit'}
                   </Button>
                 </Form.Field>
               </Form>
@@ -92,20 +128,20 @@ const LoginForm = ({
   </div>
 );
 
-LoginForm.propTypes = {
+ApplyParty.propTypes = {
   submit: PropTypes.func,
-  loggedIn: PropTypes.bool,
+  signedUp: PropTypes.bool,
   loading: PropTypes.bool,
   authError: PropTypes.oneOf(['null', null, PropTypes.object]).isRequired,
 };
 
 const defaultFunc = input => input;
 
-LoginForm.defaultProps = {
-  loggedIn: false,
+ApplyParty.defaultProps = {
+  signedUp: false,
   loading: false,
   submit: defaultFunc
 };
 
 
-export default LoginForm;
+export default ApplyParty;

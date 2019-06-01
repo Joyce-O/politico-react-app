@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Header from './Header';
-// import ApplyOfficeContainerForm from './ApplyOfficeContainerForm';
-import PartyContainer from '../containers/PartyContainer';
+import Signup from '../containers/Signup';
 import Footer from './Footer';
 
-const Party = ({ authError, submit, loading, signedUp }) => (
+const Home = ({ authError, submit, loading, signedUp }) => (
   <div className="container">
     <Header />
     <section className="home-section home-section-home">
@@ -23,11 +22,11 @@ const Party = ({ authError, submit, loading, signedUp }) => (
       <div id="action-word">
         <h2>
           Welcome to
-          <span>Politico, </span>
+          <span> Politico, </span>
           vote at the click of a button!
         </h2>
         <div>
-          <PartyContainer />
+          <Signup />
         </div>
       </div>
     </section>
@@ -35,7 +34,7 @@ const Party = ({ authError, submit, loading, signedUp }) => (
   </div>
 );
 
-Party.propTypes = {
+Home.propTypes = {
   submit: PropTypes.func,
   signedUp: PropTypes.bool,
   loading: PropTypes.bool,
@@ -44,10 +43,10 @@ Party.propTypes = {
 
 const defaultFunc = input => input;
 
-Party.defaultProps = {
+Home.defaultProps = {
   signedUp: false,
   loading: false,
   submit: defaultFunc,
 };
 
-export default Party;
+export default Home;
