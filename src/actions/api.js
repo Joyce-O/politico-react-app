@@ -25,3 +25,5 @@ console.log(tokenn);
 
 export const signup = params => client.post('/auth/signup', params);
 export const login = params => client.post('/auth/login', params);
+export const createParty = params => client.post('/parties', params);
+export const createOffice = params => client.post('/offices', params);

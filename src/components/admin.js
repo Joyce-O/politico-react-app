@@ -50,14 +50,14 @@ Political Offices
                 </a>
               </li>
               <li>
-                <a href="new_party.html">
+                <a href="/party">
                   <span className="menu-ico menu-ico-d">&#43;</span>
 New Party
 
                 </a>
               </li>
               <li>
-                <a href="new_office.html">
+                <a href="/office">
                   <span className="menu-ico menu-ico-d">&#43;</span>
 New Office
 

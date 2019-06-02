@@ -2,7 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SignupComp from '../components/Signup';
 import Home from '../components/Home';
-import AdminComp from '../components/admin';
+import AdminComp from '../components/Admin';
+import PartyComp from '../components/Party';
+import OfficeComp from '../components/Office';
 
 const App = () => (
   <Router>
@@ -10,6 +12,8 @@ const App = () => (
       <Route path="/" exact component={Home} />
       <Route path="/signup" exact component={SignupComp} />
       <Route path="/admin" exact component={AdminComp} />
+      <Route path="/party" exact component={PartyComp} />
+      <Route path="/office" exact component={OfficeComp} />
       {/* <Route path="/profile" exact component={Profile} />
       <Route path="/candidate" exact component={Candidates} />
       <Route path="/party" exact component={Party} />
