@@ -4,7 +4,7 @@ import { Formik } from 'formik';
 
 import { Form, Input } from 'semantic-ui-react';
 import Button from '../utilities/Button';
-import ErrorMsg from '../utilities/ErrorMsg';
+import ErrorMesssage from './ErrorMessage';
 import { NewPartySchema } from '../utilities/validations';
 
 const PartyForm = ({
@@ -52,7 +52,7 @@ const PartyForm = ({
           >
             <div>
               <h4 className="fill-up">Please fill in this form to create an party.</h4>
-              <ErrorMsg
+              <ErrorMesssage
                 hidden={!authError && formError.length === 0}
                 error={authError || formError}
               />

@@ -4,7 +4,7 @@ import { Formik } from 'formik';
 
 import { Form, Input } from 'semantic-ui-react';
 import Button from '../utilities/Button';
-import ErrorMsg from '../utilities/ErrorMsg';
+import ErrorMsg from '../utilities/ErrorMesssage ';
 import { SignupSchema } from '../utilities/validations';
 
 const SignupForm = ({
