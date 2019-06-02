@@ -34,7 +34,7 @@ const Login = (props) => {
       </div>
     </div>
   ) : (
-    <Redirect to="/profile" />
+    <Redirect to="/admin" />
   );
 };
 

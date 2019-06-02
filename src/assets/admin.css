@@ -17,6 +17,10 @@
     transition: all 0.4s !important;
     position: relative !important;
 }
+#grayId, ::placeholder {
+  color: #4b4949;
+  /* opacity: 1; Firefox */
+}
 .blueButton {
   background-color: rgb(97, 128, 43) !important;
   color: white !important;
@@ -64,7 +68,18 @@
 }
 
 /* New additions end */
-  
+   .home-section-admin-a {
+    margin-top: -40px;
+    width: 100%;
+    height: 90%;
+    background-position: center;
+    align-self: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    padding-bottom:80px;  /* Height of the footer */
+   }
   .home-section-admin:before {
       content: "";
       position: fixed;
@@ -164,6 +179,7 @@
       padding: 20px;
       margin-right: 40px;
       height: 100%;
+      margin-top: 80px;
       flex: 1;;
        color: black; 
       width: fit-content;
@@ -337,23 +353,26 @@
       /* border: 3px solid red; */
       border-radius: 6px;
       color: white;
+      margin-top: 0px;
       padding: 5px;
       
     }
     #table-info {
       display: flex;
       border-bottom: 1px solid rgba(112, 112, 112, .5);
-      background: rgba(1, 51, 1, 0.671);
+      background: #000;
+      /* background: rgba(1, 51, 1, 0.671); */
       justify-content: center;
       padding: 10px;
     }
     #table-info a {
       padding: 5px;
-      background: white;
+      /* background: white; */
       /* box-shadow: 5px 5px white, 10px 10px; */
       border-radius: 5px;
       margin: 0;
-      color: rgba(1, 51, 1, 0.671);
+      color: white;
+      /* color: rgba(1, 51, 1, 0.671); */
       text-align: center;
       font-weight: bolder;
     }
@@ -366,7 +385,8 @@
     }
     #table-head {
       height: 50px;
-      background: rgba(1, 51, 1, 0.671);
+      background: #000;
+      /* background: rgba(1, 51, 1, 0.671); */
       color: white;
       
     }

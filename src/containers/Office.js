@@ -3,34 +3,28 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 
-import ApplyCandidate from '../components/ApplyCandidate';
-import { postCandidate } from '../actions/candidate';
+import OfficeForm from '../components/OfficeForm';
+import { fetchOffice } from '../actions/office';
 
-const Signup = (props) => {
+const Office = (props) => {
   const {
     loading,
     error,
     isAuthenticated,
     onSignup,
-    candidate
+    office
   } = props;
 
   const submitHandler = ({
-    age,
-    qualification,
-    office,
-    party,
+    name, ageLimit, basicQual, type,
   }) => {
-    onSignup(age,
-      qualification,
-      office,
-      party,);
+    onSignup(name, ageLimit, basicQual, type,);
   };
 
-  return !candidate ? (
+  return !office ? (
     <div>
       <div>
-        <ApplyCandidate
+        <OfficeForm
           authError={error}
           signedUp={isAuthenticated}
           loading={loading}
@@ -39,39 +33,34 @@ const Signup = (props) => {
       </div>
     </div>
   ) : (
-    <Redirect to="/profile" />
+    <Redirect to="/admin" />
   );
 };
 
 const mapStateToProps = state => ({
-  loading: state.candReducer.loading,
-  error: state.candReducer.error,
-  isAuthenticated: state.candReducer.isAuthenticated,
-  candidate: state.candReducer.candidate
+  loading: state.officeReducer.loading,
+  error: state.officeReducer.error,
+  isAuthenticated: state.officeReducer.isAuthenticated,
+  office: state.officeReducer.office
 });
 
 const mapDispatchToProps = dispatch => ({
-  onSignup: (age,
-    qualification,
-    office,
-    party,) => dispatch(postCandidate(age,
-    qualification,
-    office,
-    party,)),
+  onSignup: (name,
+    ageLimit, basicQual, type,) => dispatch(fetchOffice(name, ageLimit, basicQual, type,)),
 });
 
-Signup.propTypes = {
+Office.propTypes = {
   loading: PropTypes.bool.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
   error: PropTypes.oneOf(['null', null, PropTypes.object]).isRequired,
   onSignup: PropTypes.func,
-  candidate: PropTypes.bool.isRequired
+  office: PropTypes.bool.isRequired
 };
 
 const defaultFunc = input => input;
 
-Signup.defaultProps = {
+Office.defaultProps = {
   onSignup: defaultFunc,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Signup);
+export default connect(mapStateToProps, mapDispatchToProps)(Office);

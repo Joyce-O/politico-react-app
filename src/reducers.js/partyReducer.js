@@ -1,7 +1,7 @@
 import * as actions from '../actions/actionTypes';
 
 const initialState = {
-  parties: null,
+  party: null,
   error: null,
   loading: false,
   isAuthenticated: false
@@ -15,7 +15,7 @@ const partyLoading = state => ({
 
 const partySuccess = (state, action) => ({
   ...state,
-  parties: action.parties,
+  party: action.party,
   loading: false,
   error: null
 });

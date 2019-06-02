@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Message } from 'semantic-ui-react';
 
-const errorMsg = ({ error, hidden }) => {
+const ErrorMsg = ({ error, hidden }) => {
   if (typeof (error) === 'string') {
     error = { error };
   }
@@ -24,8 +24,8 @@ const errorMsg = ({ error, hidden }) => {
   );
 };
 
-errorMsg.propTypes = {
+ErrorMsg.propTypes = {
   hidden: PropTypes.bool.isRequired,
   error: PropTypes.oneOf(['null', {}]).isRequired
 };
-export default errorMsg;
+export default ErrorMsg;

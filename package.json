@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Politico enables citizens give their mandate to politicians running for different government offices while building trust in the process through transparency.",
   "main": "index.js",
+  "engines": {
+    "node": "10.15.3"
+  },
   "scripts": {
     "test": "jest --config jest.config.js",
     "ci:test": "jest --config jest.config.js | coveralls",

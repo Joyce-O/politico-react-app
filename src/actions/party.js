@@ -1,13 +1,13 @@
 import * as actions from './actionTypes';
-import { fetchParty } from './api';
+import { createParty } from './api';
 
 export const partyStart = () => ({
   type: actions.PARTY_LOADING,
 });
 
-export const partySuccess = token => ({
+export const partySuccess = party => ({
   type: actions.PARTY_SUCCESS,
-  token,
+  party,
 });
 
 export const partyFail = error => ({
@@ -15,22 +15,17 @@ export const partyFail = error => ({
   error,
 });
 
-export const getParty = (name,
-  acronym,
-  hqAddress,
-  email,
-  phone,) => (dispatch) => {
+export const fetchParty = (name, acronym, hqAddress, email, phone) => (dispatch) => {
+  console.log(name, acronym, hqAddress, email, phone);
   dispatch(partyStart());
-  fetchParty({
-    name,
-    acronym,
-    hqAddress,
-    email,
-    phone,
+
+  createParty({
+    name, acronym, hqAddress, email, phone,
   })
     .then((response) => {
-      console.log(response);
+      console.log('party', response.data);
       dispatch(partySuccess(response.data));
+    //   localStorage.setItem('token', response.data.data[0].token);
     })
     .catch((err) => {
       console.log(err.response);

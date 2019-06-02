@@ -4,7 +4,7 @@ import { Formik } from 'formik';
 
 import { Form, Input } from 'semantic-ui-react';
 import Button from '../utilities/Button';
-import errorMsg from '../utilities/errorMsg';
+import ErrorMsg from '../utilities/ErrorMsg';
 import { LoginSchema } from '../utilities/validations';
 
 const LoginForm = ({
@@ -49,7 +49,7 @@ const LoginForm = ({
           >
             <div>
               <h4 className="fill-up">Please fill in this form to create an account.</h4>
-              <errorMsg
+              <ErrorMsg
                 hidden={!authError && formError.length === 0}
                 error={authError || formError}
               />

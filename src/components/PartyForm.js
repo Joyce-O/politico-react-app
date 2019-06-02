@@ -4,23 +4,22 @@ import { Formik } from 'formik';
 
 import { Form, Input } from 'semantic-ui-react';
 import Button from '../utilities/Button';
-import errorMsg from '../utilities/errorMsg';
-import { SignupSchema } from '../utilities/validations';
+import ErrorMsg from '../utilities/ErrorMsg';
+import { NewPartySchema } from '../utilities/validations';
 
-const ApplyOffice = ({
+const PartyForm = ({
   authError, submit, loading, signedUp,
 }) => (
   <div>
     <Formik
       initialValues={{
-        firstname: '',
-        lastname: '',
+        name: '',
+        acronym: '',
+        hqAddress: '',
         email: '',
         phone: '',
-        address: '',
-        password: '',
       }}
-      validationSchema={SignupSchema}
+      validationSchema={NewPartySchema}
       onSubmit={submit}
     >
       {({
@@ -40,18 +39,20 @@ const ApplyOffice = ({
             className="yellow-box"
             style={{
               position: 'absolute',
-              height: '400px',
-              width: '600px',
+              background: 'black',
+              height: 'auto',
+              width: '40%',
               margin: '-100px 0 0 -150px',
-              top: '30%',
+              top: '50%',
+              borderRadius: '5px',
               left: '40%',
               padding: '35px',
               boxShadow: '2px 2px 12px 2px rgba(.2, .2, .2, .2)'
             }}
           >
             <div>
-              <h2 style={{ textAlign: 'center', padding: '1rem', color: 'black' }}> Apply as a Candidate</h2>
-              <errorMsg
+              <h4 className="fill-up">Please fill in this form to create an party.</h4>
+              <ErrorMsg
                 hidden={!authError && formError.length === 0}
                 error={authError || formError}
               />
@@ -61,27 +62,39 @@ const ApplyOffice = ({
                     <Input
                       required
                       onBlur={handleBlur}
-                      value={values.firstname}
-                      name="firstname"
+                      value={values.name}
+                      name="name"
                       onChange={handleChange}
                       type="text"
-                      placeholder="Firstname"
+                      placeholder="Party name"
                     />
                   </Form.Field>
                   <Form.Field className="formInput">
                     <Input
                       required
                       onBlur={handleBlur}
-                      value={values.lastname}
-                      name="lastname"
+                      value={values.acronym}
+                      name="acronym"
                       onChange={handleChange}
                       type="text"
                       control="input"
-                      placeholder="Lastname"
+                      placeholder="acronym"
                     />
                   </Form.Field>
                 </Form.Group>
                 <Form.Group widths="equal">
+                  <Form.Field className="formInput">
+                    <Input
+                      required
+                      onBlur={handleBlur}
+                      value={values.hqAddress}
+                      name="hqAddress"
+                      onChange={handleChange}
+                      type="text"
+                      control="input"
+                      placeholder="Headquarters"
+                    />
+                  </Form.Field>
                   <Form.Field className="formInput">
                     <Input
                       required
@@ -94,48 +107,22 @@ const ApplyOffice = ({
                       placeholder="Email"
                     />
                   </Form.Field>
-                  <Form.Field className="formInput">
-                    <Input
-                      required
-                      onBlur={handleBlur}
-                      value={values.address}
-                      name="address"
-                      onChange={handleChange}
-                      type="text"
-                      control="input"
-                      placeholder="Address"
-                    />
-                  </Form.Field>
                 </Form.Group>
-                <Form.Group widths="equal">
-                  <Form.Field className="formInput">
-                    <Input
-                      required
-                      onBlur={handleBlur}
-                      value={values.phone}
-                      name="phone"
-                      onChange={handleChange}
-                      type="phone"
-                      control="input"
-                      placeholder="Phone number"
-                    />
-                  </Form.Field>
-                  <Form.Field className="formInput">
-                    <Input
-                      required
-                      onBlur={handleBlur}
-                      value={values.password}
-                      name="password"
-                      onChange={handleChange}
-                      type="password"
-                      control="input"
-                      placeholder="Password"
-                    />
-                  </Form.Field>
-                </Form.Group>
+                <Form.Field className="formInput">
+                  <Input
+                    required
+                    onBlur={handleBlur}
+                    value={values.phone}
+                    name="phone"
+                    onChange={handleChange}
+                    type="phone"
+                    control="input"
+                    placeholder="Phone number"
+                  />
+                </Form.Field>
                 <Form.Field>
                   <Button loading={loading} disabled={loading} type="blueButton">
-                    {signedUp ? 'Sign up successful' : 'Sign up'}
+                    {signedUp ? 'Party created' : 'Submit'}
                   </Button>
                 </Form.Field>
               </Form>
@@ -147,7 +134,7 @@ const ApplyOffice = ({
   </div>
 );
 
-ApplyOffice.propTypes = {
+PartyForm.propTypes = {
   submit: PropTypes.func,
   signedUp: PropTypes.bool,
   loading: PropTypes.bool,
@@ -156,11 +143,11 @@ ApplyOffice.propTypes = {
 
 const defaultFunc = input => input;
 
-ApplyOffice.defaultProps = {
+PartyForm.defaultProps = {
   signedUp: false,
   loading: false,
   submit: defaultFunc
 };
 
 
-export default ApplyOffice;
+export default PartyForm;

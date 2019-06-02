@@ -3,38 +3,36 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 
-import SignupForm from '../components/SignupForm';
-import { fetchSignup } from '../actions/auth';
+import PartyForm from '../components/PartyForm';
+import { fetchParty } from '../actions/party';
 
-const Signup = (props) => {
+const Party = (props) => {
   const {
     loading,
     error,
     isAuthenticated,
     onSignup,
-    token
+    party
   } = props;
 
   const submitHandler = ({
-    firstname,
-    lastname,
+    name,
+    acronym,
+    hqAddress,
     email,
     phone,
-    address,
-    password,
   }) => {
-    onSignup(firstname,
-      lastname,
+    onSignup(name,
+      acronym,
+      hqAddress,
       email,
-      phone,
-      address,
-      password,);
+      phone,);
   };
 
-  return !token ? (
+  return !party ? (
     <div>
       <div>
-        <SignupForm
+        <PartyForm
           authError={error}
           signedUp={isAuthenticated}
           loading={loading}
@@ -43,43 +41,41 @@ const Signup = (props) => {
       </div>
     </div>
   ) : (
-    <Redirect to="/profile" />
+    <Redirect to="/admin" />
   );
 };
 
 const mapStateToProps = state => ({
-  loading: state.signupReducer.loading,
-  error: state.signupReducer.error,
-  isAuthenticated: state.signupReducer.isAuthenticated,
-  token: state.signupReducer.token
+  loading: state.partyReducer.loading,
+  error: state.partyReducer.error,
+  isAuthenticated: state.partyReducer.isAuthenticated,
+  party: state.partyReducer.party
 });
 
 const mapDispatchToProps = dispatch => ({
-  onSignup: (firstname,
-    lastname,
+  onSignup: (name,
+    acronym,
+    hqAddress,
     email,
-    phone,
-    address,
-    password,) => dispatch(fetchSignup(firstname,
-    lastname,
+    phone,) => dispatch(fetchParty(name,
+    acronym,
+    hqAddress,
     email,
-    phone,
-    address,
-    password,)),
+    phone,)),
 });
 
-Signup.propTypes = {
+Party.propTypes = {
   loading: PropTypes.bool.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
   error: PropTypes.oneOf(['null', null, PropTypes.object]).isRequired,
   onSignup: PropTypes.func,
-  token: PropTypes.bool.isRequired
+  party: PropTypes.bool.isRequired
 };
 
 const defaultFunc = input => input;
 
-Signup.defaultProps = {
+Party.defaultProps = {
   onSignup: defaultFunc,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Signup);
+export default connect(mapStateToProps, mapDispatchToProps)(Party);

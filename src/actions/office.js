@@ -1,13 +1,13 @@
 import * as actions from './actionTypes';
-import { fetchOffice } from './api';
+import { createOffice } from './api';
 
 export const officeStart = () => ({
   type: actions.OFFICE_LOADING,
 });
 
-export const officeSuccess = candidate => ({
+export const officeSuccess = office => ({
   type: actions.OFFICE_SUCCESS,
-  candidate,
+  office,
 });
 
 export const officeFail = error => ({
@@ -15,20 +15,17 @@ export const officeFail = error => ({
   error,
 });
 
-export const getParty = (age,
-  qualification,
-  office,
-  party,) => (dispatch) => {
+export const fetchOffice = (name, ageLimit, basicQual, type,) => (dispatch) => {
+  console.log(' name', name, ' age', ageLimit, ' qual', basicQual, 'le type', type,);
   dispatch(officeStart());
-  fetchOffice({
-    age,
-    qualification,
-    office,
-    party,
+
+  createOffice({
+    name, ageLimit, basicQual, type,
   })
     .then((response) => {
-      console.log(response);
+      console.log('office', response.data);
       dispatch(officeSuccess(response.data));
+    //   localStorage.setItem('token', response.data.data[0].token);
     })
     .catch((err) => {
       console.log(err.response);
