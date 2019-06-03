@@ -8,6 +8,7 @@ import PartyComp from '../components/Party';
 import OfficeComp from '../components/Office';
 import HomePage from '../components/HomePage';
 import NotFound from '../components/NotFound';
+import PartyDetails from '../components/PartyDetails';
 
 const App = () => (
   <Router>
@@ -17,6 +18,7 @@ const App = () => (
       <Route path="/admin" exact component={AdminComp} />
       <Route path="/" exact component={HomePage} />
       <Route path="/party" exact component={PartyComp} />
+      <Route path="/partyDetails" exact component={PartyDetails} />
       <Route path="/office" exact component={OfficeComp} />
       <Route path="/political" exact component={PoliticalComp} />
       <Route path="/notfound" component={NotFound} />
