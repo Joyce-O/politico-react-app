@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import * as actions from './actionTypes';
 import { createOffice } from './api';
 
@@ -24,6 +25,7 @@ export const fetchOffice = (name, ageLimit, basicQual, type,) => (dispatch) => {
     .then((response) => {
       console.log('office', response.data);
       dispatch(officeSuccess(response.data));
+      toast.success('Office successfully created');
     //   localStorage.setItem('token', response.data.data[0].token);
     })
     .catch((err) => {

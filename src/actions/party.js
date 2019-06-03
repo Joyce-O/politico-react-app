@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import * as actions from './actionTypes';
 import { createParty } from './api';
 
@@ -25,6 +26,7 @@ export const fetchParty = (name, acronym, hqAddress, email, phone) => (dispatch)
     .then((response) => {
       console.log('party', response.data);
       dispatch(partySuccess(response.data));
+      toast.success('Party successfully created');
     //   localStorage.setItem('token', response.data.data[0].token);
     })
     .catch((err) => {
