@@ -1,8 +1,8 @@
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
 
-// const API_BASE_URL = 'https://politc.herokuapp.com/api/v1';
-const API_BASE_URL = 'http://localhost:5700/api/v1';
+const API_BASE_URL = 'https://politc.herokuapp.com/api/v1';
+// const API_BASE_URL = 'http://localhost:5700/api/v1';
 export const decodeToken = token => jwt.decode(token);
 export const getToken = () => localStorage.getItem('token');
 
@@ -16,7 +16,7 @@ export const removeToken = () => localStorage.removeItem('token');
 export const client = axios.create({
   baseURL: API_BASE_URL,
   headers: {
-    'Content-Type': 'application/json',
+    // 'Content-Type': 'application/json',
     Authorization: getToken()
   },
 });
