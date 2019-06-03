@@ -16,7 +16,6 @@ export const officeFail = error => ({
 });
 
 export const fetchOffice = (name, ageLimit, basicQual, type,) => (dispatch) => {
-  console.log(' name', name, ' age', ageLimit, ' qual', basicQual, 'le type', type,);
   dispatch(officeStart());
 
   createOffice({
