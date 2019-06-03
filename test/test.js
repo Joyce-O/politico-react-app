@@ -1,18 +1,31 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Home from '../src/components/Home';
-import NotFound from '../src/components/NotFound';
+import { Message } from 'semantic-ui-react';
+// import configureMockStore from 'redux-mock-store';
+// import thunk from 'redux-thunk';
+// import fetchMock from 'fetch-mock';
+import AuthErrorMessage from '../src/components/ErrorMessage';
 
-describe('<Home />', () => {
-  it('it renders home component', () => {
-    const h = shallow(<Home />);
-    expect(h.find('h1').length).toEqual(1);
+describe('<AuthErrorMessage/>', () => {
+  let wrapper;
+
+  beforeEach(() => {
+
   });
-});
 
-describe('<NotFound />', () => {
-  it('it renders home component', () => {
-    const h = shallow(<NotFound />);
-    expect(h.find('h1').length).toEqual(1);
+  it('should return a <Message/> element ', () => {
+    wrapper = shallow(<AuthErrorMessage
+      hidden={false}
+      error={{ email: 'Oh! It seems something went wrong' }}
+    />);
+    expect(wrapper.find(<Message />));
+  });
+
+  it('should return a <Message/> element when given error in form of string', () => {
+    wrapper = shallow(<AuthErrorMessage
+      hidden={false}
+      error="Oh! It seems something went wrong"
+    />);
+    expect(wrapper.find(<Message />));
   });
 });
