@@ -3,10 +3,7 @@ node_js:
  - "stable"
 cache:
  directories:
-  - node_modules
-env:
-  global:
-    - CC_TEST_REPORTER_ID=8b6bf12e6ead48f678784e0ee89c5de02d892a675193d275f6663b0d3c1d3494
+  - - $HOME/.npm
 before_script:
   - npm install
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
