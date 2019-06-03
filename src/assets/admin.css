@@ -25,6 +25,31 @@
   background-color: rgb(97, 128, 43) !important;
   color: white !important;
 }
+#bak {
+  height: 60px;
+  width: 60px;
+  color: white;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: inline-block;
+  padding-left: 15px;
+  padding-top: 17px;
+}
+#bak:hover {
+  color: white;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 2px solid green;
+  display: inline-block;
+  padding-left: 15px;
+  padding-top: 17px;
+}
+/* #bak a {
+ color: white;
+ font-size: em;
+ font-weight: bolder;
+} */
 .blueButton:hover {
   background-color: #4b4949 !important;
 }

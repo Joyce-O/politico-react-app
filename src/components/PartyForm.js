@@ -43,7 +43,7 @@ const PartyForm = ({
               height: 'auto',
               width: '40%',
               margin: '-100px 0 0 -150px',
-              top: '50%',
+              top: '40%',
               borderRadius: '5px',
               left: '40%',
               padding: '35px',

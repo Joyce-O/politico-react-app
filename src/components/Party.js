@@ -32,6 +32,9 @@ const PartyComp = () => (
     </header>
     <section className="home-sectionb home-section-homeb">
       {' '}
+      <div id="bak">
+        <a href="/admin"><img src="https://res.cloudinary.com/politic/image/upload/v1559568594/up_arrow_482736.png" alt="profile" width="20px" /></a>
+      </div>
       <div id="action-wordb">
         <div>
           {/* <h2 className="centre">

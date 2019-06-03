@@ -193,7 +193,7 @@ Petitions
         </section>
       </div>
     </section>
-    <Footer />
+    {/* <Footer /> */}
   </div>
 );
 
