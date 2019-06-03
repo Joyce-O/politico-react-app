@@ -20,8 +20,8 @@ export const client = axios.create({
     Authorization: getToken()
   },
 });
-const tokenn = decodeToken(getToken());
-console.log(tokenn);
+// const tokenn = decodeToken(getToken());
+// console.log(tokenn);
 
 export const signup = params => client.post('/auth/signup', params);
 export const login = params => client.post('/auth/login', params);

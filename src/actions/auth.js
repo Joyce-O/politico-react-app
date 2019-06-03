@@ -29,7 +29,6 @@ export const fetchSignup = (firstname,
       localStorage.setItem('token', response.data.data[0].token);
     })
     .catch((err) => {
-      console.log(err.response);
       const { error } = err.response.data.data;
       dispatch(signupFail(error));
     });
