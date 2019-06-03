@@ -1,12 +1,14 @@
 language: node_js
 node_js:
  - "stable"
- global:
-    - CC_TEST_REPORTER_ID=8b6bf12e6ead48f678784e0ee89c5de02d892a675193d275f6663b0d3c1d3494
 cache:
  directories:
-  - $HOME/.npm
+  - node_modules
+env:
+  global:
+    - CC_TEST_REPORTER_ID=8b6bf12e6ead48f678784e0ee89c5de02d892a675193d275f6663b0d3c1d3494
 before_script:
+  - npm install
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
