@@ -119,7 +119,7 @@ const OfficeForm = ({
                 </Form.Field>
                 <Form.Field>
                   <Button loading={loading} disabled={loading} type="blueButton">
-                    {signedUp ? 'Party created' : 'Submit'}
+                    {signedUp ? 'Office created' : 'Submit'}
                   </Button>
                 </Form.Field>
               </Form>

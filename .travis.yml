@@ -1,6 +1,8 @@
 language: node_js
 node_js:
  - "stable"
+ global:
+    - CC_TEST_REPORTER_ID=8b6bf12e6ead48f678784e0ee89c5de02d892a675193d275f6663b0d3c1d3494
 cache:
  directories:
   - $HOME/.npm
@@ -18,3 +20,5 @@ deploy:
  local_dir: build
 after_script:
  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+
+ 

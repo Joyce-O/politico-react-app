@@ -46,7 +46,7 @@ export const ForgotPasswordSchema = Yup.object().shape({
 
 export const NewOfficeSchema = Yup.object().shape({
   name: Yup.string()
-    .matches(/^[a-z0-9]+$/i, 'symbols are not allowed in name')
+    .matches(/^[a-z\d\s]+$/i, 'symbols are not allowed in name')
     .min(3,
       'Your name is too short. Please provide a name with more than 3 characters')
     .max(50,

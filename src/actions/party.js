@@ -33,5 +33,6 @@ export const fetchParty = (name, acronym, hqAddress, email, phone) => (dispatch)
       console.log(err.response);
       const { error } = err.response.data.data;
       dispatch(partyFail(error));
+      toast.error('An Error occured');
     });
 };

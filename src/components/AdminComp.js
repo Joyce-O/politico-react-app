@@ -36,14 +36,14 @@ const AdminComp = () => (
             <ul className="ul-list">
               <li id="welcome-admin">Admin</li>
               <li>
-                <a href="admin_dashboard.html">
+                <a href="/admin#">
                   <span className="menu-ico menu-ico-d">&#9916;</span>
 Dashboard
 
                 </a>
               </li>
               <li>
-                <a href="political_offices.html">
+                <a href="/political">
                   <span className="menu-ico menu-ico-d">&#x2302;</span>
 Political Offices
 
@@ -64,7 +64,7 @@ New Office
                 </a>
               </li>
               <li>
-                <a href="petition.html">
+                <a href="/admin#">
                   <span className="menu-ico menu-ico-d">&#9854;</span>
 Petitions
 
@@ -78,113 +78,115 @@ Petitions
         <section className="main-admin">
           <div className="dash-cont">
             <div id="table-info">
-              <a href="/profile">Parties</a>
+              <p>Parties</p>
             </div>
             <div id="table-cont">
               <table>
-                <tr id="table-head">
-                  <th>Logo</th>
-                  <th>Name</th>
-                  <th>Headquarters</th>
-                  <th>Details</th>
-                </tr>
-                <tr>
-                  <td className="logo-line left-pad">
-                    <span className="menu-ico menu-ico-1">&#9873;</span>
-                  </td>
-                  <td>Peoples Lifting Party</td>
-                  <td>No. 30 Asokoro Street Ikeja Lagos</td>
-                  <td className="logo-line2">
-                    <a href="party_details.html" className="menu-ico-2">&hellip;</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="logo-line left-pad">
-                    <span className="menu-ico menu-ico-1">&#9873;</span>
-                  </td>
-                  <td>Success for all Party</td>
-                  <td>No. 30 Asokoro Street Ikeja Lagos</td>
-                  <td className="logo-line2">
-                    <a href="party_details.html" className="menu-ico-2">&hellip;</a>
-                  </td>
-                </tr>
-                <tr>
+                <tbody>
+                  <tr id="table-head">
+                    <th>Logo</th>
+                    <th>Name</th>
+                    <th>Headquarters</th>
+                    <th>Details</th>
+                  </tr>
+                  <tr>
+                    <td className="logo-line left-pad">
+                      <span className="menu-ico menu-ico-1">&#9873;</span>
+                    </td>
+                    <td>Peoples Lifting Party</td>
+                    <td>No. 30 Asokoro Street Ikeja Lagos</td>
+                    <td className="logo-line2">
+                      <a href="/partyDetails" className="menu-ico-2">&hellip;</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="logo-line left-pad">
+                      <span className="menu-ico menu-ico-1">&#9873;</span>
+                    </td>
+                    <td>Success for all Party</td>
+                    <td>No. 30 Asokoro Street Ikeja Lagos</td>
+                    <td className="logo-line2">
+                      <a href="/partyDetails" className="menu-ico-2">&hellip;</a>
+                    </td>
+                  </tr>
+                  <tr>
 
-                  <td className="logo-line left-pad">
-                    <span className="menu-ico menu-ico-6">&#9873;</span>
-                  </td>
-                  <td>People Alliance Party</td>
-                  <td>No. 4 Bimpe Road Benin</td>
-                  <td className="logo-line2">
-                    <a href="party_details.html" className="menu-ico-2">&hellip;</a>
-                  </td>
-                </tr>
-                <tr>
+                    <td className="logo-line left-pad">
+                      <span className="menu-ico menu-ico-6">&#9873;</span>
+                    </td>
+                    <td>People Alliance Party</td>
+                    <td>No. 4 Bimpe Road Benin</td>
+                    <td className="logo-line2">
+                      <a href="/partyDetails" className="menu-ico-2">&hellip;</a>
+                    </td>
+                  </tr>
+                  <tr>
 
-                  <td className="logo-line left-pad">
-                    <span className="menu-ico menu-ico-3">&#9873;</span>
-                  </td>
-                  <td>Progressive Party</td>
-                  <td>Office Suit GRA Ikeja Lagos</td>
-                  <td className="logo-line2">
-                    <a href="party_details.html" className="menu-ico-2">&hellip;</a>
-                  </td>
-                </tr>
-                <tr>
+                    <td className="logo-line left-pad">
+                      <span className="menu-ico menu-ico-3">&#9873;</span>
+                    </td>
+                    <td>Progressive Party</td>
+                    <td>Office Suit GRA Ikeja Lagos</td>
+                    <td className="logo-line2">
+                      <a href="/partyDetails" className="menu-ico-2">&hellip;</a>
+                    </td>
+                  </tr>
+                  <tr>
 
-                  <td className="logo-line left-pad">
-                    <span className="menu-ico menu-ico-4">&#9873;</span>
-                  </td>
-                  <td>Unoin Deliver Party</td>
-                  <td>St. John Street V/Island Lagos</td>
-                  <td className="logo-line2">
-                    <a href="party_details.html" className="menu-ico-2">&hellip;</a>
-                  </td>
-                </tr>
-                <tr>
+                    <td className="logo-line left-pad">
+                      <span className="menu-ico menu-ico-4">&#9873;</span>
+                    </td>
+                    <td>Unoin Deliver Party</td>
+                    <td>St. John Street V/Island Lagos</td>
+                    <td className="logo-line2">
+                      <a href="/partyDetails" className="menu-ico-2">&hellip;</a>
+                    </td>
+                  </tr>
+                  <tr>
 
-                  <td className="logo-line left-pad">
-                    <span className="menu-ico menu-ico-5">&#9873;</span>
-                  </td>
-                  <td>All Success Movement</td>
-                  <td>No. 1 Asa street, Abuja</td>
-                  <td className="logo-line2">
-                    <a href="party_details.html" className="menu-ico-2">&hellip;</a>
-                  </td>
-                </tr>
-                <tr>
+                    <td className="logo-line left-pad">
+                      <span className="menu-ico menu-ico-5">&#9873;</span>
+                    </td>
+                    <td>All Success Movement</td>
+                    <td>No. 1 Asa street, Abuja</td>
+                    <td className="logo-line2">
+                      <a href="/partyDetails" className="menu-ico-2">&hellip;</a>
+                    </td>
+                  </tr>
+                  <tr>
 
-                  <td className="logo-line left-pad">
-                    <span className="menu-ico menu-ico-6">&#127937;</span>
-                  </td>
-                  <td>Power for Development Party</td>
-                  <td>New Seceteraite New Benin</td>
-                  <td className="logo-line2">
-                    <a href="party_details.html" className="menu-ico-2">&hellip;</a>
-                  </td>
-                </tr>
-                <tr>
+                    <td className="logo-line left-pad">
+                      <span className="menu-ico menu-ico-6">&#127937;</span>
+                    </td>
+                    <td>Power for Development Party</td>
+                    <td>New Seceteraite New Benin</td>
+                    <td className="logo-line2">
+                      <a href="/partyDetails" className="menu-ico-2">&hellip;</a>
+                    </td>
+                  </tr>
+                  <tr>
 
-                  <td className="logo-line left-pad">
-                    <span className="menu-ico menu-ico-5">&#9873;</span>
-                  </td>
-                  <td>Alliance Party Nigeria</td>
-                  <td>No. 1 Asa street, Abuja</td>
-                  <td className="logo-line2">
-                    <a href="party_details.html" className="menu-ico-2">&hellip;</a>
-                  </td>
-                </tr>
-                <tr>
+                    <td className="logo-line left-pad">
+                      <span className="menu-ico menu-ico-5">&#9873;</span>
+                    </td>
+                    <td>Alliance Party Nigeria</td>
+                    <td>No. 1 Asa street, Abuja</td>
+                    <td className="logo-line2">
+                      <a href="/partyDetails" className="menu-ico-2">&hellip;</a>
+                    </td>
+                  </tr>
+                  <tr>
 
-                  <td className="logo-line left-pad">
-                    <span className="menu-ico menu-ico-6">&#127937;</span>
-                  </td>
-                  <td>Peoples Central Party</td>
-                  <td>New Seceteraite New Benin</td>
-                  <td className="logo-line2">
-                    <a href="party_details.html" className="menu-ico-2">&hellip;</a>
-                  </td>
-                </tr>
+                    <td className="logo-line left-pad">
+                      <span className="menu-ico menu-ico-6">&#127937;</span>
+                    </td>
+                    <td>Peoples Central Party</td>
+                    <td>New Seceteraite New Benin</td>
+                    <td className="logo-line2">
+                      <a href="/partyDetails" className="menu-ico-2">&hellip;</a>
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </div>
           </div>

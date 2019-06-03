@@ -1,4 +1,5 @@
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
 import Party from '../containers/Party';
 import Footer from './Footer';
 
@@ -41,6 +42,7 @@ const PartyComp = () => (
           <Party />
         </div>
       </div>
+      <ToastContainer position="top-center" />
     </section>
     <Footer />
   </div>
