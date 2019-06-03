@@ -3,7 +3,7 @@ node_js:
  - "stable"
 cache:
  directories:
-  - - $HOME/.npm
+  - $HOME/.npm
 before_script:
   - npm install
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
