@@ -1,6 +1,4 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
 
 const HomePage = () => (
   <div className="containerl">
@@ -17,42 +15,12 @@ const HomePage = () => (
           <li>
             <a id="signup-btn" href="/signup">Signup</a>
           </li>
+          <li>
+            <a id="signup-btnm" href="/login">Login</a>
+          </li>
         </ul>
       </div>
     </header>
-    {/* <nav id="navbar">
-      <div className="logo">
-        <img src="./images/logo.png" alt="Politico logo" />
-        <h1><a href="index.html">olitico</a></h1>
-      </div>
-      <div className="link">
-        <ul>
-          <li>
-            <a href="signup.html">
-              <span className="icon signup-nav" />
-              {' '}
-Signup
-            </a>
-
-          </li>
-          <li>
-            <a href="login.html">
-              <span className="icon login-nav" />
-              {' '}
-Login
-            </a>
-
-          </li>
-        </ul>
-      </div>
-    </nav> */}
-    {/* <section className="intro">
-      <div className="overlay" />
-      <header>
-        <h1>Vote for the change You want</h1>
-        <h2> Welcome to the online voting platform that let's you vote for your political Candidate.</h2>
-      </header>
-    </section> */}
     <section className="why">
       <header>
         <p className="centrem">
