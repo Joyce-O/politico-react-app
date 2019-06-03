@@ -1,7 +1,5 @@
 import React from 'react';
 // import Login from '../containers/Login';
-import Footer from './Footer';
-
 const AdminComp = () => (
   <div className="containerl">
     <header className="head-login">

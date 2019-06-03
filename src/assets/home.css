@@ -162,7 +162,7 @@ color: #f4eeee;
 }
 .box-container {
   display: flex;
-  width: 90%;
+  width: 80%;
   flex-flow: wrap;
   text-align: center;
   margin: 0 auto;
