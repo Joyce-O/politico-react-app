@@ -9,6 +9,7 @@
   "scripts": {
     "test": "jest --config jest.config.js",
     "ci:test": "jest --config jest.config.js | coveralls",
+    "test:coverage": "jest --coverage || true",
     "start": "node src/app.js",
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack-dev-server --config webpack.dev.js"
